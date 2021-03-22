@@ -15,7 +15,7 @@ class BinarySearchTest {
 
     @BeforeEach
     void setUp() throws Exception {
-        tab1=new int[] {3,4,5,6,-7,-8,9};
+        tab1=new int[] {3,4,5,6,7,8,9};
 
         binarySearch=new BinarySearch();
     }
