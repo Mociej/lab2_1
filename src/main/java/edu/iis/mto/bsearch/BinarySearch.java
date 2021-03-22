@@ -29,10 +29,10 @@ public class BinarySearch {
         if (seq.length == 0) {
             throw new IllegalArgumentException();
         }
-        if(noDuplicate(seq)==false){
+        if (noDuplicate(seq) == false) {
             throw new IllegalArgumentException();
         }
-        if(isSorted(seq)==false){
+        if (isSorted(seq) == false) {
             throw new IllegalArgumentException();
         }
 
