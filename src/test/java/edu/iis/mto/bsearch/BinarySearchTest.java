@@ -10,13 +10,16 @@ import org.junit.jupiter.api.Test;
 
 class BinarySearchTest {
     public static int[] tab1;
+    public static int[] tab2;
+    public static int[] tab3;
     public static BinarySearch binarySearch;
     public static SearchResult searchResult;
 
     @BeforeEach
     void setUp() throws Exception {
         tab1=new int[] {3,4,5,6,7,8,9};
-
+        tab2=new int[] {3,4,5,5,5,8,9};
+        tab3=new int[] {3,6,5,5,7,8,9};
         binarySearch=new BinarySearch();
     }
 
@@ -63,6 +66,14 @@ class BinarySearchTest {
     void testLenZero() {
         int [] tab= new int[0];
         Assertions.assertThrows(IllegalArgumentException.class, () -> {BinarySearch.search(3, tab);});
+    }
+    @Test
+    void testDuplicates() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {BinarySearch.search(3, tab2);});
+    }
+    @Test
+    void testNoSorted() {
+        Assertions.assertThrows(IllegalArgumentException.class, () -> {BinarySearch.search(3, tab3);});
     }
 
 }
