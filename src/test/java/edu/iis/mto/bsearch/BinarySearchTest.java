@@ -33,10 +33,28 @@ class BinarySearchTest {
         assertEquals(-1,searchResult.getPosition());
     }
     @Test
+    void testLenMoreThanOneNotIn() {
+        searchResult=binarySearch.search(1111,tab1);
+        assertFalse(searchResult.isFound());
+        assertEquals(-1,searchResult.getPosition());
+    }
+    @Test
     void testLenMoreThanOneFirstPlace() {
         searchResult=binarySearch.search(3,tab1);
         assertTrue(searchResult.isFound());
         assertEquals(3,tab1[searchResult.getPosition()]);
+    }
+    @Test
+    void testLenMoreThanOneLastPlace() {
+        searchResult=binarySearch.search(9,tab1);
+        assertTrue(searchResult.isFound());
+        assertEquals(9,tab1[searchResult.getPosition()]);
+    }
+    @Test
+    void testLenMoreThanOneCenterPlace() {
+        searchResult=binarySearch.search(6,tab1);
+        assertTrue(searchResult.isFound());
+        assertEquals(6,tab1[searchResult.getPosition()]);
     }
 
 }
